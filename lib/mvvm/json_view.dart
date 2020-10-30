@@ -53,7 +53,7 @@ class JsonView extends JsonViewModel {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
               image: NetworkImage(
                 postModels[index].todaybackgroundGif,
               ),
@@ -65,7 +65,7 @@ class JsonView extends JsonViewModel {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Container(
-                  height: context.dynamicHeight(0.99),
+                  height: context.dynamicHeight(0.91),
                   child: PageView(
                     physics: ClampingScrollPhysics(),
                     controller: _pageController,
@@ -83,23 +83,108 @@ class JsonView extends JsonViewModel {
                             Row(
                               children: [
                                 Expanded(
-                                  child: Icon(Icons.add),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
                                 ),
                                 SizedBox(
                                   width: context.dynamicWidth(0.20),
                                 ),
                                 Expanded(
-                                  child: LabelText(postModels[index].firtsArea),
+                                  child: FittedBox(
+                                      child: LabelText(
+                                          postModels[index].firtsArea)),
                                 ),
                                 SizedBox(
                                   width: context.dynamicWidth(0.20),
                                 ),
-                                Expanded(child: Icon(Icons.more_vert))
+                                Expanded(
+                                    child: Icon(
+                                  Icons.more_vert,
+                                  color: Colors.white,
+                                ))
                               ],
                             ),
                             Column(
-                              children: [],
-                            )
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    TextDegree(
+                                        postModels[index].firstAreaTodayDegree),
+                                    Container(
+                                      padding: EdgeInsets.only(bottom: 35.0),
+                                      child: LabelText("°C"),
+                                    )
+                                  ],
+                                ),
+                                LabelText(
+                                    postModels[index].firstAreaTodayStatus),
+                              ],
+                            ),
+                            Container(
+                              margin: context.paddingLow,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  LabelTextDetail("Daha fazla ayrıntı"),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 5.0),
+                                    child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Colors.white,
+                                      size: 16.0,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              padding: context.paddingLow,
+                              // margin: context.paddingLow,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  LabelText("Bugün · "),
+                                  LabelText(
+                                      postModels[index].firstAreaTodayStatus),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 130.0),
+                                    child: Row(
+                                      children: [
+                                        LabelText(
+                                            postModels[index].todayDegree),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              padding: context.paddingLow,
+                              //  margin: context.paddingLow,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  LabelText("Yarın · "),
+                                  FittedBox(
+                                      child: LabelText(
+                                          postModels[index].tomorrowStatus)),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 130.0),
+                                    child: Row(
+                                      children: [
+                                        FittedBox(
+                                          child: LabelText(
+                                              postModels[index].tomorrowDegree),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),

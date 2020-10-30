@@ -11,7 +11,7 @@ class LabelText extends StatelessWidget {
     return Text(
       "$name",
       style: GoogleFonts.montserrat(
-          color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w400),
+          color: Colors.white, fontSize: 22.0, fontWeight: FontWeight.w400),
     );
   }
 }
@@ -26,7 +26,7 @@ class LabelTextDetail extends StatelessWidget {
     return Text(
       "$name",
       style: GoogleFonts.montserrat(
-          color: Colors.black, fontSize: 17.0, fontWeight: FontWeight.w400),
+          color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.w300),
     );
   }
 }
@@ -41,7 +41,7 @@ class TextDegree extends StatelessWidget {
     return Text(
       "$name",
       style: GoogleFonts.montserrat(
-          color: Colors.black, fontSize: 17.0, fontWeight: FontWeight.w400),
+          color: Colors.white, fontSize: 80.0, fontWeight: FontWeight.w400),
     );
   }
 }

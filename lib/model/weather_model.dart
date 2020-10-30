@@ -4,8 +4,8 @@ class WeatherModel extends IBaseModel<WeatherModel> {
   String todaybackgroundGif;
   String firtsArea;
   String secondArea;
-  int firstAreaTodayDegree;
-  int secondAreaTodayDegree;
+  String firstAreaTodayDegree;
+  String secondAreaTodayDegree;
   String firstAreaTodayStatus;
   String secondAreaTodayStatus;
   String yesterdayDegree;
