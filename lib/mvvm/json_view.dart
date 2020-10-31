@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:json_place_holder_training/core/contex_extension.dart';
 import 'package:json_place_holder_training/core/text.dart';
+import 'package:json_place_holder_training/mvvm/detail_page.dart';
 import 'package:json_place_holder_training/mvvm/json_view_model.dart';
 
 class JsonView extends JsonViewModel {
@@ -127,8 +128,8 @@ class JsonView extends JsonViewModel {
                             Column(
                               children: [
                                 Container(
-                                  padding: context.paddingLow,
-                                  margin: context.paddingLow,
+                                  // padding: context.paddingLow,
+                                  //margin: context.paddingLow,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -147,7 +148,7 @@ class JsonView extends JsonViewModel {
                                 ),
                                 Container(
                                   // padding: context.paddingLow,
-                                  margin: context.paddingLow,
+                                  //margin: context.paddingLow,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -169,7 +170,7 @@ class JsonView extends JsonViewModel {
                                 ),
                                 Container(
                                   //  padding: context.paddingLow,
-                                  margin: context.paddingLow,
+                                  //  margin: context.paddingLow,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -208,7 +209,13 @@ class JsonView extends JsonViewModel {
                                               .textTheme
                                               .headline6
                                               .copyWith(color: Colors.white)),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DetailPage()));
+                                      },
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(30.0),
@@ -274,8 +281,8 @@ class JsonView extends JsonViewModel {
                             Column(
                               children: [
                                 Container(
-                                  padding: context.paddingLow,
-                                  margin: context.paddingLow,
+                                  //  padding: context.paddingLow,
+                                  // margin: context.paddingLow,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -294,7 +301,7 @@ class JsonView extends JsonViewModel {
                                 ),
                                 Container(
                                   // padding: context.paddingLow,
-                                  margin: context.paddingLow,
+                                  // margin: context.paddingLow,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -316,7 +323,7 @@ class JsonView extends JsonViewModel {
                                 ),
                                 Container(
                                   //  padding: context.paddingLow,
-                                  margin: context.paddingLow,
+                                  // margin: context.paddingLow,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
