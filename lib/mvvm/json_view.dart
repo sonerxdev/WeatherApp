@@ -4,11 +4,13 @@ import 'package:json_place_holder_training/core/contex_extension.dart';
 import 'package:json_place_holder_training/core/text.dart';
 import 'package:json_place_holder_training/mvvm/detail_page.dart';
 import 'package:json_place_holder_training/mvvm/json_view_model.dart';
+import 'package:flutter/cupertino.dart';
 
 class JsonView extends JsonViewModel {
   final int _numPages = 1;
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
+  bool isUploadingData = false;
 
   // var getInfo = WeatherModel();
 
@@ -42,8 +44,21 @@ class JsonView extends JsonViewModel {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: bodyUI(),
-    );
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          elevation: 0.0,
+          // centerTitle: false,
+        ),
+        body: postModels.isEmpty
+            ? Center(
+                child: CupertinoAlertDialog(
+                content: LinearProgressIndicator(
+                  minHeight: 8.0,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                  backgroundColor: Colors.blue,
+                ),
+              ))
+            : bodyUI());
   }
 
   ListView bodyUI() {
@@ -66,7 +81,7 @@ class JsonView extends JsonViewModel {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Container(
-                  height: context.dynamicHeight(0.91),
+                  height: context.dynamicHeight(0.9),
                   child: PageView(
                     physics: ClampingScrollPhysics(),
                     controller: _pageController,
@@ -209,13 +224,7 @@ class JsonView extends JsonViewModel {
                                               .textTheme
                                               .headline6
                                               .copyWith(color: Colors.white)),
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    DetailPage()));
-                                      },
+                                      onPressed: () {},
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(30.0),
