@@ -6,3 +6,8 @@ class Json extends StatefulWidget {
   @override
   JsonView createState() => new JsonView();
 }
+
+class Json1 extends StatefulWidget {
+  @override
+  DetailPage createState() => new DetailPage();
+}

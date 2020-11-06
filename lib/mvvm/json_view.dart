@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:json_place_holder_training/core/contex_extension.dart';
 import 'package:json_place_holder_training/core/text.dart';
 import 'package:json_place_holder_training/mvvm/detail_page.dart';
+import 'package:json_place_holder_training/mvvm/json.dart';
 import 'package:json_place_holder_training/mvvm/json_view_model.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -371,7 +372,12 @@ class JsonView extends JsonViewModel {
                                               .textTheme
                                               .headline6
                                               .copyWith(color: Colors.white)),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => Json1()));
+                                      },
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(30.0),
