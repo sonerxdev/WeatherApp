@@ -225,7 +225,12 @@ class JsonView extends JsonViewModel {
                                               .textTheme
                                               .headline6
                                               .copyWith(color: Colors.white)),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => Json1()));
+                                      },
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(30.0),
