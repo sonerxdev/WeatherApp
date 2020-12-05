@@ -45,3 +45,33 @@ class TextDegree extends StatelessWidget {
     );
   }
 }
+
+class DetailPageText extends StatelessWidget {
+  final String name;
+
+  const DetailPageText(this.name);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$name",
+      style: GoogleFonts.montserrat(
+          color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.w400),
+    );
+  }
+}
+
+class AppbarText extends StatelessWidget {
+  final String name;
+
+  const AppbarText(this.name);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$name",
+      style: GoogleFonts.montserrat(
+          color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w400),
+    );
+  }
+}

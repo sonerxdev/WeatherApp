@@ -44,21 +44,18 @@ class JsonView extends JsonViewModel {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          elevation: 0.0,
-          // centerTitle: false,
-        ),
+        resizeToAvoidBottomPadding: true,
         body: postModels.isEmpty
             ? Center(
-                child: CupertinoAlertDialog(
-                content: LinearProgressIndicator(
-                  minHeight: 8.0,
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                  backgroundColor: Colors.blue,
+                child: CircularProgressIndicator(
+                  //  minHeight: 8.0,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+                  backgroundColor: Colors.white,
                 ),
-              ))
+              )
             : bodyUI());
   }
 
@@ -70,7 +67,7 @@ class JsonView extends JsonViewModel {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              fit: BoxFit.cover,
+              fit: BoxFit.fitHeight,
               image: NetworkImage(
                 postModels[index].todaybackgroundGif,
               ),
@@ -82,7 +79,7 @@ class JsonView extends JsonViewModel {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Container(
-                  height: context.dynamicHeight(0.9),
+                  height: context.dynamicHeight(0.99),
                   child: PageView(
                     physics: ClampingScrollPhysics(),
                     controller: _pageController,
@@ -145,7 +142,7 @@ class JsonView extends JsonViewModel {
                               children: [
                                 Container(
                                   // padding: context.paddingLow,
-                                  //margin: context.paddingLow,
+                                  margin: context.paddingHigh,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
@@ -168,12 +165,19 @@ class JsonView extends JsonViewModel {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
+                                      Icon(
+                                        Icons.circle,
+                                        color: Colors.yellow,
+                                      ),
+                                      SizedBox(
+                                        width: context.dynamicWidth(0.03),
+                                      ),
                                       LabelText("Bugün · "),
                                       LabelText(postModels[index]
                                           .firstAreaTodayStatus),
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(left: 130.0),
+                                            const EdgeInsets.only(left: 100.0),
                                         child: Row(
                                           children: [
                                             LabelText(
@@ -190,13 +194,20 @@ class JsonView extends JsonViewModel {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
+                                      Icon(
+                                        Icons.cloud,
+                                        color: Colors.white,
+                                      ),
+                                      SizedBox(
+                                        width: context.dynamicWidth(0.03),
+                                      ),
                                       LabelText("Yarın · "),
                                       FittedBox(
                                           child: LabelText(postModels[index]
                                               .tomorrowStatus)),
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(left: 130.0),
+                                            const EdgeInsets.only(left: 100.0),
                                         child: Row(
                                           children: [
                                             FittedBox(
@@ -316,16 +327,23 @@ class JsonView extends JsonViewModel {
                                 ),
                                 Container(
                                   // padding: context.paddingLow,
-                                  // margin: context.paddingLow,
+                                  margin: context.paddingLow,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
+                                      Icon(
+                                        Icons.circle,
+                                        color: Colors.yellow,
+                                      ),
+                                      SizedBox(
+                                        width: context.dynamicWidth(0.03),
+                                      ),
                                       LabelText("Bugün · "),
                                       LabelText(postModels[index]
                                           .firstAreaTodayStatus),
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(left: 130.0),
+                                            const EdgeInsets.only(left: 100.0),
                                         child: Row(
                                           children: [
                                             LabelText(postModels[index]
@@ -342,13 +360,20 @@ class JsonView extends JsonViewModel {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
+                                      Icon(
+                                        Icons.cloud,
+                                        color: Colors.white,
+                                      ),
+                                      SizedBox(
+                                        width: context.dynamicWidth(0.03),
+                                      ),
                                       LabelText("Yarın · "),
                                       FittedBox(
                                           child: LabelText(postModels[index]
                                               .tomorrowStatus)),
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(left: 130.0),
+                                            const EdgeInsets.only(left: 100.0),
                                         child: Row(
                                           children: [
                                             FittedBox(

@@ -22,6 +22,7 @@ class WeatherModel extends IBaseModel<WeatherModel> {
   String tomorrowAirway;
   String thirthdayAirway;
   String fifthdayAirway;
+  String day;
 
   WeatherModel(
       {this.todaybackgroundGif,
@@ -44,7 +45,8 @@ class WeatherModel extends IBaseModel<WeatherModel> {
       this.todayAirway,
       this.tomorrowAirway,
       this.thirthdayAirway,
-      this.fifthdayAirway});
+      this.fifthdayAirway,
+      this.day});
 
   WeatherModel.fromJson(Map<String, dynamic> json) {
     todaybackgroundGif = json['todaybackgroundGif'];
@@ -68,6 +70,7 @@ class WeatherModel extends IBaseModel<WeatherModel> {
     tomorrowAirway = json['tomorrowAirway'];
     thirthdayAirway = json['thirthdayAirway'];
     fifthdayAirway = json['fifthdayAirway'];
+    day = json['day'];
   }
 
   Map<String, dynamic> toJson() {
@@ -93,6 +96,7 @@ class WeatherModel extends IBaseModel<WeatherModel> {
     data['tomorrowAirway'] = this.tomorrowAirway;
     data['thirthdayAirway'] = this.thirthdayAirway;
     data['fifthdayAirway'] = this.fifthdayAirway;
+    data['day'] = this.day;
     return data;
   }
 
