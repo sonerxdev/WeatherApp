@@ -1,16 +1,14 @@
-# json_place_holder_training
+## Flutter Weather App
+##### - In this project, i coded the weather app with Flutter. Also i used MVVM Design Pattern and Rest Api. The app is getting the weather data and the background gif from my readme file on github.
+<img src = "assets/images/5.png" width=600 height:250>
 
-A new Flutter project.
+### My Application Design
 
-## Getting Started
+<img src="assets/images/11.png" width=240 height:100> <img src="assets/images/22.png" width=240 height:100>  
+<img src="assets/images/3.png" width=240 height:80>     <img src="assets/images/4.png" width=240 height:80>
 
-This project is a starting point for a Flutter application.
+### Technologies I used
 
-A few resources to get you started if this is your first Flutter project:
+-Flutter
+-MVVM Design Pattern
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
