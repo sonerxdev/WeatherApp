@@ -9,6 +9,6 @@
 
 ### Technologies I used
 
--Flutter
--MVVM Design Pattern
+##### -Flutter
+##### -MVVM Design Pattern
 
